@@ -1,0 +1,8 @@
+production:
+  type: deploy
+  script:
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl
+  - dpl --provider=heroku --app=cs-d-api --api-key=$HEROKU_API_KEY
+  - curl -X POST -d {} https://api.netlify.com/build_hooks/5cc37e1cb9562f12ca6ab325

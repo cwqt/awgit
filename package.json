@@ -1,0 +1,32 @@
+{
+  "name": "awgit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/cxss/awgit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/cxss/awgit/issues"
+  },
+  "homepage": "https://gitlab.com/cxss/awgit#readme",
+  "dependencies": {
+    "node": "^15.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.0",
+    "@types/winston": "^2.4.4",
+    "@vercel/node": "^1.8.5",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.10.2",
+    "tsc-watch": "^4.2.3",
+    "typescript": "^3.8.3"
+  }
+}
