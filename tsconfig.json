@@ -3,25 +3,23 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "es6",
-    "lib": [ "es2020" ],
+    "lib": ["es2020"],
     "noImplicitAny": true,
     "moduleResolution": "node",
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "strictPropertyInitialization": false,
     "sourceMap": true,
     "outDir": "./build",
     "rootDirs": ["backend/lib"],
-    "typeRoots": [
-      "@types",
-      "./node_modules/@types",
-    ],
+    "typeRoots": ["@types", "./node_modules/@types"],
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"]
     }
   },
-  "exclude": ["node_modules", "collector", "data"]
+  "exclude": ["node_modules", "collector"]
 }

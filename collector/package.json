@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "collect": "",
+    "start": "env NODE_ENV=development nodemon lib/index.ts",
+    "start:test": "env NODE_ENV=testing nodemon lib/index.ts",
+    "start:dev": "env NODE_ENV=development nodemon --inspect lib/index.ts"
   },
   "repository": {
     "type": "git",
@@ -18,14 +21,20 @@
   },
   "homepage": "https://gitlab.com/cxss/awgit#readme",
   "dependencies": {
-    "node": "^15.4.0"
+    "aw-client": "^0.2.0",
+    "dotenv": "^8.2.0",
+    "firebase": "^8.2.1",
+    "node": "^15.4.0",
+    "node-notifier": "^9.0.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
-    "typescript": "^3.8.3",
+    "@types/node": "^13.9.0",
+    "@types/node-notifier": "^8.0.0",
+    "@types/winston": "^2.4.4",
+    "nodemon": "^2.0.2",
     "ts-node": "^8.10.2",
     "tsc-watch": "^4.2.3",
-    "nodemon": "^2.0.2",
-    "@types/winston": "^2.4.4",
-    "@types/node": "^13.9.0"
+    "typescript": "^3.8.3"
   }
 }

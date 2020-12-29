@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/days", "destination": "/api/getAllDays" },
+    { "source": "/days/:did", "destination": "/api/getDay" },
+    { "source": "/days/total", "destination": "/api/getLongestDay" },
+    { "source": "/days/hours", "destination": "/api/getTotalHours" },
+    { "source": "/days/longest", "destination": "/api/getLongestDay" }
+  ]
+}

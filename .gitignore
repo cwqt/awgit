@@ -5,3 +5,5 @@ build
 dist
 .env
 .env_prod
+.vercel
+firebase-key.json
