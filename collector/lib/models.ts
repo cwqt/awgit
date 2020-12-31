@@ -17,4 +17,5 @@ export interface ICommit {
   message: string;
   sha: string;
   url: string;
+  signing_key?:string;
 }

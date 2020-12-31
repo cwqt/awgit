@@ -64,7 +64,5 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
     );
   }
 
-  console.log(days);
-
   return days;
 };
