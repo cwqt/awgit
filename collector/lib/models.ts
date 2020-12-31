@@ -2,11 +2,15 @@ export interface IDay {
   _id?:string;
   date: Date;
   commits: ICommit[];
-  stats: {
-    productive: number;
-    nonproductive: number;
-    other: number;
-  }
+  stats: IDayStats;
+}
+
+export interface IDayStats {
+  productive: number;
+  nonproductive: number;
+  language: number;
+  communications: number;
+  other: number;
 }
 
 export interface ICommit {
