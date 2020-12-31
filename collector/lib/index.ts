@@ -1,28 +1,41 @@
 require('dotenv').config();
+const fs = require('fs');
 import notifier from 'node-notifier';
 import firestore from './firestore';
-
 import logger from './logger';
 import { getStartAndEndDates, timeless } from './helpers';
-import { IDay } from './models';
+import { IDay, IPrivateData } from './models';
 import Readers from './readers';
 
-const environmentVariables = ["FIREBASE_API_KEY", "FIREBASE_EMAIL", "FIREBASE_PASSWORD", "GITLAB_API_KEY", "GITHUB_API_KEY"];
-environmentVariables.forEach(v => {
-  if(!process.env[v]) throw new Error(`Missing environment variable: ${v}`)
+[
+  'FIREBASE_API_KEY',
+  'FIREBASE_EMAIL',
+  'FIREBASE_PASSWORD',
+  'GITLAB_API_KEY',
+  'GITHUB_API_KEY',
+  'GITHUB_USERNAME',
+  'GITLAB_USERNAME',
+].forEach((v) => {
+  if (!process.env[v]) throw new Error(`Missing environment variable: ${v}`);
 });
+
+const PRIVATE:IPrivateData = JSON.parse(fs.readFileSync(__dirname+'/private.json'));
+if(!PRIVATE) throw new Error("Missing private data file");
+export default PRIVATE;
 
 (async () => {
   try {
-    logger.info("Starting to collect data");
+    logger.info('Starting to collect data');
     const [fs, collection] = await firestore.setup();
     const [start, end] = await getStartAndEndDates(collection);
-
     const dayDifference = Math.floor((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
-    if (dayDifference == 0) {
-      logger.info(`No day difference`)
+
+    if (dayDifference <= 1) {
+      logger.info(`No day difference`);
       process.exit(0);
     }
+
+    logger.info(`Getting data for days between ${start} & ${end}`)
 
     notifier.notify({
       title: 'awgit',
@@ -46,17 +59,19 @@ environmentVariables.forEach(v => {
       });
     }
 
+    console.log(days);
+    process.exit(1);
+
     await Readers.ActivityWatch(days);
-    // await Readers.GitHub(days);
+    await Readers.GitHub(days);
     await Readers.GitLab(days);
 
-
-    // const batch = fs.batch();
-    // days.forEach((d) => batch.set(collection.doc(), d));
-    // await batch.commit();
-
+    logger.info("Sending days to Firestore")
+    const batch = fs.batch();
+    days.forEach((d) => batch.set(collection.doc(), d));
+    await batch.commit();
   } catch (error) {
-    console.log(error)
+    console.log(error);
     logger.error(error);
     notifier.notify({
       title: 'awgit',
@@ -64,6 +79,6 @@ environmentVariables.forEach(v => {
       sound: true,
     });
   } finally {
-    logger.info("Finished collecting data");
+    logger.info('Finished collecting data');
   }
 })();

@@ -3,81 +3,85 @@ import { ReaderFn } from './index';
 import { AWClient } from 'aw-client';
 import { URL } from 'url';
 import logger from '../logger';
+import PRIVATE from '../index';
 
-enum AwBucket {
-  Code = 'aw-watcher-vscode_zephyr.mynet',
-  Web = 'aw-watcher-web-chrome',
+// needs to be called as PRIVATE not parsed yet when imported
+const getMaps = () => {
+  const WindowGenreMap: { [index in keyof IDayStats]: string[] } = {
+    nonproductive: ['Discord', 'Spotify', 'steam_osx', 'News'],
+    productive: [
+      'kitty',
+      'Electron', // VSCode
+      'Sublime Text',
+      'Calendar',
+      'Notes',
+      'Xcode',
+      'zoom.us',
+      'iTerm2',
+      'Postman',
+      'TablePlus',
+      'Terminal',
+      'Activity Monitor',
+    ],
+    language: ['Anki'],
+    communications: ['WhatsApp', 'Telegram'],
+    other: [],
+  };
+  
+  const WebsiteGenreMap: { [index in keyof IDayStats]: string[] } = {
+    nonproductive: [
+      'youtube.com',
+      'amazon.com',
+      'boards.4chan.org',
+      'boards.4channel.org',
+      'facebook.com',
+      'twitter.com',
+      'reddit.com',
+      'medium.com',
+      ...PRIVATE.websites.nonproductive
+    ],
+    productive: [
+      'us02web.zoom.us',
+      'en.wikipedia.org',
+      'github.com',
+      'gitlab.com',
+      'npmjs.com',
+      'wikipedia.org',
+      'atlassian.net',
+      'notion.so',
+      'vercel.com',
+      'netlify.com',
+      'aws.amazon.com',
+      'localhost',
+      'stackoverflow.com',
+      'console.firebase.google.com',
+      'linkedin.com',
+      'ibm.com',
+      'helm.sh',
+      'cass.si',
+      'forestry.io',
+      'angular.io',
+      ...PRIVATE.websites.productive
+    ],
+    language: [
+      'duolingo.com',
+      'forum.duolingo.com',
+      'duome.eu',
+      'translate.google.com',
+      'ordbok.uib.no',
+    ],
+    communications: ['messenger.com', 'discord.com', 'gmail.com', 'mail.google.com'],
+    other: [],
+  };
+  
+  const StatKeyMap = Object.keys(WindowGenreMap);
+  
+  return { WindowGenreMap, WebsiteGenreMap, StatKeyMap };
 }
-
-const WindowGenreMap: { [index in keyof IDayStats]: string[] } = {
-  nonproductive: ['Discord', 'Spotify', 'steam_osx', 'News'],
-  productive: [
-    'kitty',
-    'Electron', // VSCode
-    'Sublime Text',
-    'Calendar',
-    'Notes',
-    'Xcode',
-    'zoom.us',
-    'iTerm2',
-    'Postman',
-    'TablePlus',
-    'Terminal',
-    'Activity Monitor',
-  ],
-  language: ['Anki'],
-  communications: ['WhatsApp', 'Telegram'],
-  other: [],
-};
-
-const WebsiteGenreMap: { [index in keyof IDayStats]: string[] } = {
-  nonproductive: [
-    'youtube.com',
-    'amazon.com',
-    'boards.4chan.org',
-    'boards.4channel.org',
-    'facebook.com',
-    'twitter.com',
-    'reddit.com',
-    'medium.com',
-  ],
-  productive: [
-    'us02web.zoom.us',
-    'en.wikipedia.org',
-    'github.com',
-    'gitlab.com',
-    'npmjs.com',
-    'wikipedia.org',
-    'atlassian.net',
-    'notion.so',
-    'vercel.com',
-    'netlify.com',
-    'aws.amazon.com',
-    'localhost',
-    'stackoverflow.com',
-    'console.firebase.google.com',
-    'linkedin.com',
-    'ibm.com',
-    'helm.sh',
-    'cass.si',
-    'forestry.io',
-    'angular.io',
-  ],
-  language: [
-    'duolingo.com',
-    'forum.duolingo.com',
-    'duome.eu',
-    'translate.google.com',
-    'ordbok.uib.no',
-  ],
-  communications: ['messenger.com', 'discord.com', 'gmail.com', 'mail.google.com'],
-  other: [],
-};
-
-const StatKeyMap = Object.keys(WindowGenreMap);
 
 export const readActivityWatch: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
   const client = new AWClient('awgit');
+  const { WindowGenreMap, WebsiteGenreMap, StatKeyMap } = getMaps();
 
   for (let i = 0; i < days.length; i++) {
     let yesterday = days[i - 1];

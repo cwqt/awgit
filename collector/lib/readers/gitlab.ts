@@ -3,8 +3,30 @@ import { timeless } from '../helpers';
 import { ICommit, IDay } from '../models';
 import { ReaderFn } from './index';
 
+// https://docs.gitlab.com/ee/user/gitlab_com/index.html#gitlabcom-specific-rate-limits
+// 600 req / min = 0.1 seconds / req
+const avoidRatelimit = async () => { await new Promise((resolve) => setTimeout(resolve, 150)); }
+
+const getSignedCommitKid = async (projectId:number, commitSHA:string):Promise<string | null> => {
+  await avoidRatelimit();
+  let ret:string | null;
+
+  try {
+    const res = await Axios.get(`https://gitlab.com/api/v4/projects/${projectId}/repository/commits/${commitSHA}/signature`, {
+      headers: {
+        ['PRIVATE-TOKEN']: process.env.GITLAB_API_KEY,
+      }
+    });
+    ret = res.data.gpg_key_primary_keyid;  
+  } catch (error) {
+    ret = null;
+  }
+
+  return ret;
+}
+
 const getProjectById = async (projectId: number): Promise<any> => {
-  await new Promise((resolve) => setTimeout(resolve, 500)); //avoid rate-limit
+  await avoidRatelimit();
   const res = await Axios.get(`https://gitlab.com/api/v4/projects/${projectId}`, {
     headers: {
       ['PRIVATE-TOKEN']: process.env.GITLAB_API_KEY,
@@ -54,10 +76,11 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
               projectMap.set(c.project_id, await getProjectById(c.project_id));
 
             return {
-              project: projectMap.get(c.project_id).path_with_namespace, // e.g. cxss/days
+              slug: `${projectMap.get(c.project_id).path_with_namespace}@${c.push_data.ref}`, // e.g. cxss/days@master
               message: c.push_data.commit_title || '',
               sha: c.push_data.commit_to,
               url: `https://gitlab.com/projects/${c.project_id}`,
+              signing_key: await getSignedCommitKid(c.project_id, c.push_data.commit_to)
             };
           })
       )

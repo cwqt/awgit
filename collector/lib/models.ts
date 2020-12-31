@@ -14,8 +14,18 @@ export interface IDayStats {
 }
 
 export interface ICommit {
-  message: string;
+  slug:string; // cxss/repo@master
   sha: string;
   url: string;
+  message: string;
   signing_key?:string;
+}
+
+export interface IPrivateData {
+  websites:{
+    productive: string[];
+    nonproductive: string[];
+  }; // google.com
+  windows:string[]; // somewindow
+  repos: {[index:string]:string}
 }

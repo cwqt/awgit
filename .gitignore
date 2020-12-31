@@ -7,3 +7,4 @@ dist
 .env_prod
 .vercel
 firebase-key.json
+private.json
