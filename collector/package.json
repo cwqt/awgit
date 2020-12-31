@@ -22,6 +22,7 @@
   "homepage": "https://gitlab.com/cxss/awgit#readme",
   "dependencies": {
     "aw-client": "^0.2.0",
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "firebase": "^8.2.1",
     "node": "^15.4.0",
@@ -29,6 +30,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^13.9.0",
     "@types/node-notifier": "^8.0.0",
     "@types/winston": "^2.4.4",

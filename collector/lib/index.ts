@@ -19,8 +19,10 @@ environmentVariables.forEach(v => {
     const [start, end] = await getStartAndEndDates(collection);
 
     const dayDifference = Math.floor((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
-    logger.info(`No day difference`)
-    if (dayDifference == 0) process.exit(0);
+    if (dayDifference == 0) {
+      logger.info(`No day difference`)
+      process.exit(0);
+    }
 
     notifier.notify({
       title: 'awgit',
@@ -46,7 +48,7 @@ environmentVariables.forEach(v => {
 
     await Readers.ActivityWatch(days);
     // await Readers.GitHub(days);
-    // await Readers.GitLab(days);
+    await Readers.GitLab(days);
 
 
     // const batch = fs.batch();
