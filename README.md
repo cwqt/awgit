@@ -1,6 +1,7 @@
 # awgit
 
-A re-write of (days)[https://gitlab.com/cxss/days], using (ActivityWatch)[https://activitywatch.net/].
+A re-write of [days](https://gitlab.com/cxss/days), using [ActivityWatch](https://activitywatch.net/) & [Firebase](https://firebase.google.com/).
 
-API using (Vercel)[https://vercel.com/] serverless functions written in TypeScript.  
-Data collector with support for GitLab & GitHub pushing data to Firestore.
+API uses [Vercel](https://vercel.com/) serverless functions written in TypeScript.  
+Now with support for GitLab & GitHub :)
+
