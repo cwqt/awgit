@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/days", "destination": "/api/getAllDays" },
-    { "source": "/days/:did", "destination": "/api/getDay" },
-    { "source": "/days/config", "destination": "/api/getConfig" }
+    { "source": "/days/config", "destination": "/api/getConfig" },
+    { "source": "/days/:did", "destination": "/api/getDay" }
   ]
 }

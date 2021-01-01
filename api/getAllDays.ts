@@ -1,9 +1,18 @@
-import { NowRequest, NowResponse } from '@vercel/node'
-import { IDay } from '../interfaces/IDay.model';
+import { handleRoute, VercelFunction } from '../helpers/handler';
+import { IDay } from '../helpers/interfaces';
 
-export default (request: NowRequest, response: NowResponse) => {
-  let days:Array<Omit<IDay, "commits">> = [];
+const getAllDays: VercelFunction = async (request, fs): Promise<Array<Omit<IDay, 'commits'>>> => {
+  const collection = fs.collection('days');
+  
+  return (await collection.get()).docs.map((d) => {
+    const data = d.data();
+    return {
+      _id: data._id,
+      date: data.date,
+      commit_count: data.commit_count,
+      stats: data.stats,
+    };
+  });
+};
 
-  const { name = 'World' } = request.query
-  response.status(200).send(`Hello ${name}!`)
-}
+export default handleRoute(getAllDays);
