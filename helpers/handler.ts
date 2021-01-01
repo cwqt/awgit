@@ -10,7 +10,8 @@ export const handleRoute = (f:VercelFunction) => {
       const ret = await f(request, fs);
       response.json(ret);
     } catch (error) {
-      response.status(500).json({ status: "fail", message: error.stack })    
+      console.log(error)
+      response.status(500).json({ status: "fail", message: error.message })    
     } 
   }
 }
