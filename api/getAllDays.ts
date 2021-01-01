@@ -1,10 +1,28 @@
 import { handleRoute, VercelFunction } from '../helpers/handler';
 import { IDay } from '../helpers/interfaces';
 
-const getAllDays: VercelFunction = async (request, fs): Promise<Array<Omit<IDay, 'commits'>>> => {
+const getAllDays: VercelFunction = async (req, fs): Promise<Array<Omit<IDay, 'commits'>>> => {
   const collection = fs.collection('days');
-  
-  return (await collection.get()).docs.map((d) => {
+
+  const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
+  let start = req.query.start as string;
+  let end = req.query.end as string;
+
+  if(start && !start.match(dateRegex)) throw Error(`Invalid start date (YYYY-MM-DD)`);
+  if(end && !end.match(dateRegex)) throw Error(`Invalid start date (YYYY-MM-DD)`);
+
+  let startDate = start ? new Date(start) : new Date();
+  let endDate = end ? new Date(end) : addDay(startDate, -99);
+
+  const dayDifference = Math.floor((endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24));
+  if(Math.abs(dayDifference) > 100) throw Error(`Must be less-than-or-equal to 100 days between dates`)
+
+  const days = await collection
+    .where('date', '<=', startDate)
+    .where('date', '>=', endDate)
+    .get();
+
+  return days.docs.map(d => {
     const data = d.data();
     return {
       _id: data._id,
@@ -12,7 +30,16 @@ const getAllDays: VercelFunction = async (request, fs): Promise<Array<Omit<IDay,
       commit_count: data.commit_count,
       stats: data.stats,
     };
-  });
+  })
 };
 
 export default handleRoute(getAllDays);
+
+
+const timeless = (date: Date): Date => {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+};
+
+const addDay = (date:Date, amount:number):Date => {
+  return timeless(new Date(new Date((date.getTime() + (amount * 60 * 60 * 24 * 1000)))))
+}
