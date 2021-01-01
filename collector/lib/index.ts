@@ -71,8 +71,10 @@ export default PRIVATE;
     days.forEach((d) => {
       const doc = collection.doc();
       d._id = doc.id;
+      console.log(d)
       batch.set(doc, d);
     });
+
     await batch.commit();
 
     const env = await fs.collection('config').doc('days').get();
@@ -95,7 +97,7 @@ export default PRIVATE;
       return (acc += currDayTime);
     }, 0);
 
-    // Update the configuration
+    //Update the configuration
     await env.ref.update({
       longest_day: longestDay._id,
       total_days: envData.total_days + days.length,

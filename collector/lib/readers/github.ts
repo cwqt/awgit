@@ -3,6 +3,7 @@ import PRIVATE from '../index';
 import { addDay, timeless } from '../helpers';
 import { ICommit, IDay } from '../models';
 import { ReaderFn } from './index';
+import logger from '../logger';
 
 const pgp = require('pgp-utils');
 
@@ -56,6 +57,8 @@ export const readGitHub: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
     i++; // get next page
   }
 
+  logger.info(`Got ${githubEvents.length} events`);
+
   githubEvents = githubEvents.filter((e: any) => e.type == 'PushEvent');
   const dateMappedEvents: Map<string, any[]> = githubEvents.reduce((acc, curr) => {
     const eventDate = timeless(new Date(curr.created_at)).toISOString();
@@ -82,7 +85,7 @@ export const readGitHub: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
                   sha: c.sha,
                   url: isPrivate ? '#' : c.url,
                   message: isPrivate ? 'Made a private contribution' : c.message,
-                  signing_key: await getSignedCommitKid(e.repo.name, c.sha),
+                  signing_key: await getSignedCommitKid(e.repo.name, c.sha) || "",
                 };
               })
             );

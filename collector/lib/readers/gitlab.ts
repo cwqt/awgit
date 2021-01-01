@@ -1,7 +1,10 @@
 import Axios from 'axios';
+import logger from '../logger';
 import { addDay, timeless } from '../helpers';
 import { ICommit, IDay } from '../models';
 import { ReaderFn } from './index';
+const linkHeaders = require('parse-link-header');
+
 
 // https://docs.gitlab.com/ee/user/gitlab_com/index.html#gitlabcom-specific-rate-limits
 // 600 req / min = 0.1 seconds / req
@@ -48,20 +51,36 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
   const newestDay = days[days.length - 1];
   if (oldestDay.date == newestDay.date) return days;
 
+  let data: any[] = [];
+  // We can use a start/end point with GitLab API but returns them in pages of default 20
   // Go +-1 day just to be sure because I think something about the dates is fucking this
-  const res = await Axios.get(
-    `https://gitlab.com/api/v4/events?action_type=pushed&after=${addDay(
-      oldestDay.date,
-      -1
-    )}&before=${addDay(newestDay.date, 1)}`,
-    {
-      headers: {
-        ['PRIVATE-TOKEN']: process.env.GITLAB_API_KEY,
-      },
-    }
-  );
+  let isStillPaging = true;
+  let page = 1;
+  while(isStillPaging) {
+    const res = await Axios.get(
+      `https://gitlab.com/api/v4/events?page=${page}&page_size=100&action=pushed&after=${addDay(oldestDay.date, -1)
+        .toISOString()
+        .substring(0, 10)}&before=${addDay(newestDay.date, 1).toISOString().substring(0, 10)}`,
+      {
+        headers: {
+          ['PRIVATE-TOKEN']: process.env.GITLAB_API_KEY,
+        },
+      }
+    );
 
-  const data: any[] = res.data;
+    data = data.concat(res.data);
+    await avoidRatelimit();
+    const link = linkHeaders(res.headers.link);
+
+    if(link.next) {
+      page = link.next.page;
+    } else {
+      isStillPaging = false;
+    }
+  }
+
+  logger.info(`Got ${data.length} events`);
+
   const dateMappedContribs: Map<string, any[]> = data.reduce((acc: Map<string, any[]>, curr) => {
     const commitDate = timeless(new Date(curr.created_at)).toISOString();
     acc.has(commitDate)
@@ -76,6 +95,8 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
     let today = days[i];
     const todaysGitContributions = dateMappedContribs.get(today.date.toISOString()) || [];
 
+    // console.log(today.date, todaysGitContributions);
+
     today.commits = today.commits.concat(
       await Promise.all(
         todaysGitContributions
@@ -89,7 +110,7 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
               message: c.push_data.commit_title || '',
               sha: c.push_data.commit_to,
               url: `https://gitlab.com/projects/${c.project_id}`,
-              signing_key: await getSignedCommitKid(c.project_id, c.push_data.commit_to),
+              signing_key: await getSignedCommitKid(c.project_id, c.push_data.commit_to) || "",
             };
           })
       )

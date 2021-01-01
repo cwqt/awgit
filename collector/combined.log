@@ -3196,3 +3196,519 @@
 {"message":"Finished collecting data","level":"info"}
 {"message":"Starting to collect data","level":"info"}
 {"message":"No day difference","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"No day difference","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitHub\u001b[0m","level":"info"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitHub\u001b[0m","level":"info"}
+{"message":"Got 60 events","level":"info"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Got 28 events","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitHub\u001b[0m","level":"info"}
+{"message":"Got 60 events","level":"info"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Got 28 events","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitHub\u001b[0m","level":"info"}
+{"message":"Got 60 events","level":"info"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Got 28 events","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitHub\u001b[0m","level":"info"}
+{"message":"Got 60 events","level":"info"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Got 28 events","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitHub\u001b[0m","level":"info"}
+{"message":"Starting to collect data","level":"info"}
+{"message":"Getting data for days between Tue Dec 22 2020 00:00:00 GMT+0000 (Greenwich Mean Time) & Fri Jan 01 2021 00:00:00 GMT+0000 (Greenwich Mean Time)","level":"info"}
+{"message":"Reading data from \u001b[1mActivityWatch\u001b[0m","level":"info"}
+{"message":"\tCollecting Window Events (14)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (9)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (11)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (18)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (15)","level":"info"}
+{"message":"Collecting Chrome Event (0)","level":"info"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (460)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-29T14:14:07.736000+00:00\",\"duration\":314.47,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"\tCollecting Window Events (12)","level":"info"}
+{"message":"Collecting Chrome Event (227)","level":"info"}
+{"message":"Invalid URL: {\"id\":null,\"timestamp\":\"2020-12-30T12:35:14.852000+00:00\",\"duration\":138.014,\"data\":{\"url\":\"\"}}","level":"error"}
+{"message":"Reading data from \u001b[1mGitHub\u001b[0m","level":"info"}
+{"message":"Got 60 events","level":"info"}
+{"message":"Reading data from \u001b[1mGitLab\u001b[0m","level":"info"}
+{"message":"Got 28 events","level":"info"}
+{"message":"Sending days to Firestore","level":"info"}
+{"message":"Finished collecting data","level":"info"}
