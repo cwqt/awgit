@@ -25,3 +25,7 @@ export const getStartAndEndDates = async (collection: Collection): Promise<[Date
   const endDate = new Date();
   return [timeless(startDate), timeless(endDate)];
 };
+
+export const addDay = (date:Date, amount:number):Date => {
+  return timeless(new Date(new Date((date.getTime() + (amount * 60 * 60 * 24 * 1000)))))
+}

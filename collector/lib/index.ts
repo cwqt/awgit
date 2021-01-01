@@ -6,6 +6,7 @@ import logger from './logger';
 import { getStartAndEndDates, timeless } from './helpers';
 import { IDay, IDaysEnvironment, IPrivateData } from './models';
 import Readers from './readers';
+import { DefaultSerializer } from 'v8';
 
 [
   'FIREBASE_API_KEY',
@@ -49,6 +50,7 @@ export default PRIVATE;
         // make new date from start adding i days onto it
         date: timeless(new Date(new Date((start.getTime() + (i * 60 * 60 * 24 * 1000))))),
         commits: [],
+        commit_count: 0,
         stats: {
           productive: 0,
           nonproductive: 0,
@@ -62,6 +64,7 @@ export default PRIVATE;
     await Readers.ActivityWatch(days);
     await Readers.GitHub(days);
     await Readers.GitLab(days);
+    days.forEach(day => { day.commit_count = day.commits.length });
 
     logger.info('Sending days to Firestore');
     const batch = fs.batch();
@@ -109,4 +112,4 @@ export default PRIVATE;
   } finally {
     logger.info('Finished collecting data');
   }
-})().then(() => process.exit(1));
+})().then(() => process.exit(0));

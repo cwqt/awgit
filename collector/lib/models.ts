@@ -1,8 +1,9 @@
 export interface IDay {
   _id?:string;
   date: Date;
-  commits: ICommit[];
   stats: IDayStats;
+  commit_count:number;
+  commits: ICommit[];
 }
 
 export interface IDayStats {

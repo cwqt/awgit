@@ -1,29 +1,34 @@
 import Axios from 'axios';
-import { timeless } from '../helpers';
+import { addDay, timeless } from '../helpers';
 import { ICommit, IDay } from '../models';
 import { ReaderFn } from './index';
 
 // https://docs.gitlab.com/ee/user/gitlab_com/index.html#gitlabcom-specific-rate-limits
 // 600 req / min = 0.1 seconds / req
-const avoidRatelimit = async () => { await new Promise((resolve) => setTimeout(resolve, 150)); }
+const avoidRatelimit = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 150));
+};
 
-const getSignedCommitKid = async (projectId:number, commitSHA:string):Promise<string | null> => {
+const getSignedCommitKid = async (projectId: number, commitSHA: string): Promise<string | null> => {
   await avoidRatelimit();
-  let ret:string | null;
+  let ret: string | null;
 
   try {
-    const res = await Axios.get(`https://gitlab.com/api/v4/projects/${projectId}/repository/commits/${commitSHA}/signature`, {
-      headers: {
-        ['PRIVATE-TOKEN']: process.env.GITLAB_API_KEY,
+    const res = await Axios.get(
+      `https://gitlab.com/api/v4/projects/${projectId}/repository/commits/${commitSHA}/signature`,
+      {
+        headers: {
+          ['PRIVATE-TOKEN']: process.env.GITLAB_API_KEY,
+        },
       }
-    });
-    ret = res.data.gpg_key_primary_keyid;  
+    );
+    ret = res.data.gpg_key_primary_keyid;
   } catch (error) {
     ret = null;
   }
 
   return ret;
-}
+};
 
 const getProjectById = async (projectId: number): Promise<any> => {
   await avoidRatelimit();
@@ -43,8 +48,12 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
   const newestDay = days[days.length - 1];
   if (oldestDay.date == newestDay.date) return days;
 
+  // Go +-1 day just to be sure because I think something about the dates is fucking this
   const res = await Axios.get(
-    `https://gitlab.com/api/v4/events?action_type=pushed&after=${oldestDay.date}&before=${newestDay.date}`,
+    `https://gitlab.com/api/v4/events?action_type=pushed&after=${addDay(
+      oldestDay.date,
+      -1
+    )}&before=${addDay(newestDay.date, 1)}`,
     {
       headers: {
         ['PRIVATE-TOKEN']: process.env.GITLAB_API_KEY,
@@ -80,7 +89,7 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
               message: c.push_data.commit_title || '',
               sha: c.push_data.commit_to,
               url: `https://gitlab.com/projects/${c.project_id}`,
-              signing_key: await getSignedCommitKid(c.project_id, c.push_data.commit_to)
+              signing_key: await getSignedCommitKid(c.project_id, c.push_data.commit_to),
             };
           })
       )

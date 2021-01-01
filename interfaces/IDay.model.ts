@@ -2,6 +2,7 @@ export interface IDay {
   _id?:string;
   date: Date;
   commits: ICommit[];
+  commit_count: number;
   stats: {
     visual: number;
     writing: number;

@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import PRIVATE from '../index';
-import { timeless } from '../helpers';
+import { addDay, timeless } from '../helpers';
 import { ICommit, IDay } from '../models';
 import { ReaderFn } from './index';
 
@@ -35,7 +35,7 @@ export const readGitHub: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
   if (oldestDay.date == newestDay.date) return days;
 
   // GitHub has no mechanism for getting dates within a period, so we'll just paging backwards
-  // until we've got something with a date before the oldestDay.date
+  // until we've got something with a date before the oldestDay.date (-1 day just to be sure)
   let githubEvents: any[] = [];
   let gotDateBeforeOldestDay = false;
   let i = 0;
@@ -51,7 +51,7 @@ export const readGitHub: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
     );
 
     githubEvents = githubEvents.concat(res.data);
-    gotDateBeforeOldestDay = res.data.some((d: any) => new Date(d.created_at) < oldestDay.date);
+    gotDateBeforeOldestDay = res.data.some((d: any) => new Date(d.created_at) < addDay(oldestDay.date, -1));
     await avoidRatelimit();
     i++; // get next page
   }
