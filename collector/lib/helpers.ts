@@ -9,10 +9,18 @@ export const timeless = (date: Date): Date => {
 };
 
 export const getStartAndEndDates = async (collection: Collection): Promise<[Date, Date]> => {
-  const startDate: Date = 
+  let startDate: Date = 
     (await collection.orderBy('date', 'desc').limit(1).get()).docs
       .map((x) => x.data())[0]
-      ?.date.toDate() || new Date()
+      ?.date.toDate() || null;
+
+  if(!startDate) {
+    console.log("No start dte")
+    const today = new Date()
+    const yesterday = new Date(today)
+    yesterday.setDate(yesterday.getDate() - 10);
+    startDate = yesterday;
+  }
 
   const endDate = new Date();
   return [timeless(startDate), timeless(endDate)];

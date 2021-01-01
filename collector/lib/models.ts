@@ -21,6 +21,12 @@ export interface ICommit {
   signing_key?:string;
 }
 
+export interface IDaysEnvironment {
+  longest_day: string;//id to object
+  total_days: number;
+  total_hours: number;
+}
+
 export interface IPrivateData {
   websites:{
     productive: string[];

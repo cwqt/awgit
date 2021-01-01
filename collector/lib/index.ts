@@ -4,7 +4,7 @@ import notifier from 'node-notifier';
 import firestore from './firestore';
 import logger from './logger';
 import { getStartAndEndDates, timeless } from './helpers';
-import { IDay, IPrivateData } from './models';
+import { IDay, IDaysEnvironment, IPrivateData } from './models';
 import Readers from './readers';
 
 [
@@ -19,8 +19,8 @@ import Readers from './readers';
   if (!process.env[v]) throw new Error(`Missing environment variable: ${v}`);
 });
 
-const PRIVATE:IPrivateData = JSON.parse(fs.readFileSync(__dirname+'/private.json'));
-if(!PRIVATE) throw new Error("Missing private data file");
+const PRIVATE: IPrivateData = JSON.parse(fs.readFileSync(__dirname + '/private.json'));
+if (!PRIVATE) throw new Error('Missing private data file');
 export default PRIVATE;
 
 (async () => {
@@ -35,7 +35,7 @@ export default PRIVATE;
       process.exit(0);
     }
 
-    logger.info(`Getting data for days between ${start} & ${end}`)
+    logger.info(`Getting data for days between ${start} & ${end}`);
 
     notifier.notify({
       title: 'awgit',
@@ -47,7 +47,7 @@ export default PRIVATE;
     for (let i = 0; i < dayDifference; i++) {
       days.push({
         // make new date from start adding i days onto it
-        date: timeless(new Date(new Date().setDate(start.getDate() + i))),
+        date: timeless(new Date(new Date((start.getTime() + (i * 60 * 60 * 24 * 1000))))),
         commits: [],
         stats: {
           productive: 0,
@@ -59,17 +59,45 @@ export default PRIVATE;
       });
     }
 
-    console.log(days);
-    process.exit(1);
-
     await Readers.ActivityWatch(days);
     await Readers.GitHub(days);
     await Readers.GitLab(days);
 
-    logger.info("Sending days to Firestore")
+    logger.info('Sending days to Firestore');
     const batch = fs.batch();
-    days.forEach((d) => batch.set(collection.doc(), d));
+    days.forEach((d) => {
+      const doc = collection.doc();
+      d._id = doc.id;
+      batch.set(doc, d);
+    });
     await batch.commit();
+
+    const env = await fs.collection('config').doc('days').get();
+    const envData = env.data();
+
+    // Get previous longest day - if it exists
+    let longestDay = (await fs.collection("days").doc(envData.longest_day).get()).data();
+    let longestDayTime = longestDay
+      ? Object.values<number>(longestDay.stats).reduce((a, c) => (a += c), 0)
+      : 0;
+
+    // Sum up days stats times & check if any day was longer than the previously longest
+    let totalDaysTime = days.reduce((acc, curr) => {
+      let currDayTime = Object.values(curr.stats).reduce((a, c) => (a += c), 0);
+      if (currDayTime > longestDayTime) {
+        longestDay = curr;
+        longestDayTime = currDayTime;
+      }
+
+      return (acc += currDayTime);
+    }, 0);
+
+    // Update the configuration
+    await env.ref.update({
+      longest_day: longestDay._id,
+      total_days: envData.total_days + days.length,
+      total_hours: envData.total_hours + totalDaysTime
+    });
   } catch (error) {
     console.log(error);
     logger.error(error);
@@ -81,4 +109,4 @@ export default PRIVATE;
   } finally {
     logger.info('Finished collecting data');
   }
-})();
+})().then(() => process.exit(1));
