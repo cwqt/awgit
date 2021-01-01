@@ -4,9 +4,8 @@ import notifier from 'node-notifier';
 import firestore from './firestore';
 import logger from './logger';
 import { getStartAndEndDates, timeless } from './helpers';
-import { IDay, IDaysEnvironment, IPrivateData } from './models';
+import { IDay, IPrivateData } from './models';
 import Readers from './readers';
-import { DefaultSerializer } from 'v8';
 
 [
   'FIREBASE_API_KEY',
@@ -48,7 +47,7 @@ export default PRIVATE;
     for (let i = 0; i < dayDifference; i++) {
       days.push({
         // make new date from start adding i days onto it
-        date: timeless(new Date(new Date((start.getTime() + (i * 60 * 60 * 24 * 1000))))),
+        date: timeless(new Date(new Date(start.getTime() + i * 60 * 60 * 24 * 1000))),
         commits: [],
         commit_count: 0,
         stats: {
@@ -64,14 +63,16 @@ export default PRIVATE;
     await Readers.ActivityWatch(days);
     await Readers.GitHub(days);
     await Readers.GitLab(days);
-    days.forEach(day => { day.commit_count = day.commits.length });
+    days.forEach((day) => {
+      day.commit_count = day.commits.length;
+    });
 
     logger.info('Sending days to Firestore');
     const batch = fs.batch();
     days.forEach((d) => {
       const doc = collection.doc();
       d._id = doc.id;
-      console.log(d)
+      console.log(d);
       batch.set(doc, d);
     });
 
@@ -81,7 +82,7 @@ export default PRIVATE;
     const envData = env.data();
 
     // Get previous longest day - if it exists
-    let longestDay = (await fs.collection("days").doc(envData.longest_day).get()).data();
+    let longestDay = (await fs.collection('days').doc(envData.longest_day).get()).data();
     let longestDayTime = longestDay
       ? Object.values<number>(longestDay.stats).reduce((a, c) => (a += c), 0)
       : 0;
@@ -101,7 +102,7 @@ export default PRIVATE;
     await env.ref.update({
       longest_day: longestDay._id,
       total_days: envData.total_days + days.length,
-      total_hours: envData.total_hours + totalDaysTime
+      total_hours: envData.total_hours + totalDaysTime,
     });
   } catch (error) {
     console.log(error);

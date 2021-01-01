@@ -1,8 +1,8 @@
 export interface IDay {
-  _id?:string;
+  _id?: string;
   date: Date;
   stats: IDayStats;
-  commit_count:number;
+  commit_count: number;
   commits: ICommit[];
 }
 
@@ -15,24 +15,24 @@ export interface IDayStats {
 }
 
 export interface ICommit {
-  slug:string; // cxss/repo@master
+  slug: string; // cxss/repo@master
   sha: string;
   url: string;
   message: string;
-  signing_key?:string;
+  signing_key?: string;
 }
 
 export interface IDaysEnvironment {
-  longest_day: string;//id to object
+  longest_day: string; //id to object
   total_days: number;
   total_hours: number;
 }
 
 export interface IPrivateData {
-  websites:{
+  websites: {
     productive: string[];
     nonproductive: string[];
   }; // google.com
-  windows:string[]; // somewindow
-  repos: {[index:string]:string}
+  windows: string[]; // somewindow
+  repos: { [index: string]: string };
 }

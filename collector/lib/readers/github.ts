@@ -52,7 +52,9 @@ export const readGitHub: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
     );
 
     githubEvents = githubEvents.concat(res.data);
-    gotDateBeforeOldestDay = res.data.some((d: any) => new Date(d.created_at) < addDay(oldestDay.date, -1));
+    gotDateBeforeOldestDay = res.data.some(
+      (d: any) => new Date(d.created_at) < addDay(oldestDay.date, -1)
+    );
     await avoidRatelimit();
     i++; // get next page
   }
@@ -85,7 +87,7 @@ export const readGitHub: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
                   sha: c.sha,
                   url: isPrivate ? '#' : c.url,
                   message: isPrivate ? 'Made a private contribution' : c.message,
-                  signing_key: await getSignedCommitKid(e.repo.name, c.sha) || "",
+                  signing_key: (await getSignedCommitKid(e.repo.name, c.sha)) || '',
                 };
               })
             );
