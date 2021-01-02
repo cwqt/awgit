@@ -17,7 +17,7 @@ export default async (request:NowRequest, response:NowResponse) => {
       <ul class="nested">
         <li><b><code>?start</code></b> start date YYYY-MM-DD (optional)</li>
         <li><b><code>?end</code></b> end date YYYY-MM-DD (optional)</li>
-        <li><i>Max 100 days between start & end</li></li>
+        <li><i>Max 182 days between start & end</li></li>
       </ul>
     </li>
     <li><b><code>GET /days/config</code></b> some meta info, total days, total hrs</li>
