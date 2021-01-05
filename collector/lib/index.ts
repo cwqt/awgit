@@ -1,5 +1,6 @@
 require('dotenv').config();
 const fs = require('fs');
+import Axios from 'axios';
 import notifier from 'node-notifier';
 import firestore from './firestore';
 import logger from './logger';
@@ -8,6 +9,7 @@ import { IDay, IPrivateData } from './models';
 import Readers from './readers';
 
 [
+  'NETLIFY_HOOK_ID',
   'FIREBASE_API_KEY',
   'FIREBASE_EMAIL',
   'FIREBASE_PASSWORD',
@@ -104,12 +106,20 @@ export default PRIVATE;
       total_days: envData.total_days + days.length,
       total_hours: envData.total_hours + totalDaysTime,
     });
+
+    await Axios.post(`https://api.netlify.com/build_hooks/${process.env.NETLIFY_HOOK_ID}`)
+    notifier.notify({
+      title: 'awgit - COMPLETE',
+      message: `Click to see site build status`,
+      open: "https://app.netlify.com/",
+      sound: true,
+    });
   } catch (error) {
     console.log(error);
     logger.error(error);
     notifier.notify({
-      title: 'awgit',
-      message: error.message,
+      title: 'awgit - ERROR',
+      message: `An error occured, check the logs for more info`,
       sound: true,
     });
   } finally {
