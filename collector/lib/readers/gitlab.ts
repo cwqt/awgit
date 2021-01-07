@@ -5,7 +5,6 @@ import { ICommit, IDay } from '../models';
 import { ReaderFn } from './index';
 const linkHeaders = require('parse-link-header');
 
-
 // https://docs.gitlab.com/ee/user/gitlab_com/index.html#gitlabcom-specific-rate-limits
 // 600 req / min = 0.1 seconds / req
 const avoidRatelimit = async () => {
@@ -56,9 +55,12 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
   // Go +-1 day just to be sure because I think something about the dates is fucking this
   let isStillPaging = true;
   let page = 1;
-  while(isStillPaging) {
+  while (isStillPaging) {
     const res = await Axios.get(
-      `https://gitlab.com/api/v4/events?page=${page}&page_size=100&action=pushed&after=${addDay(oldestDay.date, -1)
+      `https://gitlab.com/api/v4/events?page=${page}&page_size=100&action=pushed&after=${addDay(
+        oldestDay.date,
+        -1
+      )
         .toISOString()
         .substring(0, 10)}&before=${addDay(newestDay.date, 1).toISOString().substring(0, 10)}`,
       {
@@ -72,7 +74,7 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
     await avoidRatelimit();
     const link = linkHeaders(res.headers.link);
 
-    if(link.next) {
+    if (link.next) {
       page = link.next.page;
     } else {
       isStillPaging = false;
@@ -95,8 +97,6 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
     let today = days[i];
     const todaysGitContributions = dateMappedContribs.get(today.date.toISOString()) || [];
 
-    // console.log(today.date, todaysGitContributions);
-
     today.commits = today.commits.concat(
       await Promise.all(
         todaysGitContributions
@@ -110,7 +110,7 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
               message: c.push_data.commit_title || '',
               sha: c.push_data.commit_to,
               url: `https://gitlab.com/projects/${c.project_id}`,
-              signing_key: await getSignedCommitKid(c.project_id, c.push_data.commit_to) || "",
+              signing_key: (await getSignedCommitKid(c.project_id, c.push_data.commit_to)) || '',
             };
           })
       )

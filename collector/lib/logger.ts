@@ -13,7 +13,9 @@ logger.add(
   new winston.transports.Console({
     format: winston.format.combine(
       winston.format.colorize(),
-      winston.format.printf((info: any) => info.message ? `[${info.level}]: ${info.message.trim()}` : "")
+      winston.format.printf((info: any) =>
+        info.message ? `[${info.level}]: ${info.message.trim()}` : ''
+      )
     ),
   })
 );

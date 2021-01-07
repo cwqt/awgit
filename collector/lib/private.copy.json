@@ -1,8 +1,8 @@
 {
-  "websites":{
-    "productive":[],
-    "nonproductive":[]
+  "websites": {
+    "productive": [],
+    "nonproductive": []
   },
-  "windows":[],
-  "repos":[]
+  "windows": [],
+  "repos": []
 }

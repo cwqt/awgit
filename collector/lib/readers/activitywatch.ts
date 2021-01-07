@@ -27,7 +27,7 @@ const getMaps = () => {
     communications: ['WhatsApp', 'Telegram'],
     other: [],
   };
-  
+
   const WebsiteGenreMap: { [index in keyof IDayStats]: string[] } = {
     nonproductive: [
       'youtube.com',
@@ -38,7 +38,7 @@ const getMaps = () => {
       'twitter.com',
       'reddit.com',
       'medium.com',
-      ...PRIVATE.websites.nonproductive
+      ...PRIVATE.websites.nonproductive,
     ],
     productive: [
       'us02web.zoom.us',
@@ -61,7 +61,7 @@ const getMaps = () => {
       'cass.si',
       'forestry.io',
       'angular.io',
-      ...PRIVATE.websites.productive
+      ...PRIVATE.websites.productive,
     ],
     language: [
       'duolingo.com',
@@ -73,11 +73,11 @@ const getMaps = () => {
     communications: ['messenger.com', 'discord.com', 'gmail.com', 'mail.google.com'],
     other: [],
   };
-  
+
   const StatKeyMap = Object.keys(WindowGenreMap);
-  
+
   return { WindowGenreMap, WebsiteGenreMap, StatKeyMap };
-}
+};
 
 export const readActivityWatch: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
   const client = new AWClient('awgit');

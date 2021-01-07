@@ -5,7 +5,7 @@ import 'firebase/firestore';
 export type Collection = firebase.firestore.CollectionReference<firebase.firestore.DocumentData>;
 export type FireStore = firebase.firestore.Firestore;
 
-const setup = async ():Promise<[FireStore, Collection]> => {
+const setup = async (): Promise<[FireStore, Collection]> => {
   const app = firebase.initializeApp({
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: 'awgit-38dbb.firebaseapp.com',
@@ -21,7 +21,6 @@ const setup = async ():Promise<[FireStore, Collection]> => {
     .signInWithEmailAndPassword(process.env.FIREBASE_EMAIL, process.env.FIREBASE_PASSWORD);
   const db = app.firestore();
   return [db, db.collection('days')];
-}
+};
 
-
-export default { setup }
+export default { setup };

@@ -40,7 +40,7 @@ export default PRIVATE;
     logger.info(`Getting data for days between ${start} & ${end}`);
 
     notifier.notify({
-      title: 'awgit',
+      title: 'awgit - Starting',
       message: `Generating data for the last ${dayDifference} day(s)`,
       sound: true,
     });
@@ -74,7 +74,6 @@ export default PRIVATE;
     days.forEach((d) => {
       const doc = collection.doc();
       d._id = doc.id;
-      console.log(d);
       batch.set(doc, d);
     });
 
@@ -107,18 +106,18 @@ export default PRIVATE;
       total_hours: envData.total_hours + totalDaysTime,
     });
 
-    await Axios.post(`https://api.netlify.com/build_hooks/${process.env.NETLIFY_HOOK_ID}`)
+    await Axios.post(`https://api.netlify.com/build_hooks/${process.env.NETLIFY_HOOK_ID}`);
     notifier.notify({
-      title: 'awgit - COMPLETE',
+      title: 'awgit - Finished collecting data',
       message: `Click to see site build status`,
-      open: "https://app.netlify.com/",
+      open: 'https://app.netlify.com/',
       sound: true,
     });
   } catch (error) {
     console.log(error);
     logger.error(error);
     notifier.notify({
-      title: 'awgit - ERROR',
+      title: 'awgit - Failed',
       message: `An error occured, check the logs for more info`,
       sound: true,
     });

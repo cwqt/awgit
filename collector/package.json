@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "collect": "",
+    "collect": "ts-node lib/index.ts",
     "start": "env NODE_ENV=development nodemon lib/index.ts",
     "start:test": "env NODE_ENV=testing nodemon lib/index.ts",
     "start:dev": "env NODE_ENV=development nodemon --inspect lib/index.ts"
