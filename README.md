@@ -20,7 +20,7 @@ GITHUB_USERNAME
 GITLAB_USERNAME
 ```
 
-To get the collector to run every day, vreate a file called `.collect.sh` in your home, and add the following:
+To get the collector to run every day, create a file called `.collect.sh` in your home, and add the following:
 
 ```sh
 #!/bin/bash -l
