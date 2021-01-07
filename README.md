@@ -1,4 +1,5 @@
-# awgit
+# awgit  &nbsp;  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgitlab.com%2Fcxss%2Fawgit&env=FIREBASE_API_KEY,FIREBASE_PASSWORD,FIREBASE_EMAIL&project-name=awgit&repository-name=awgit)
+
 
 A re-write of [days](https://gitlab.com/cxss/archive/-/tree/master/days), using [ActivityWatch](https://activitywatch.net/) & [Firebase](https://firebase.google.com/).
 
