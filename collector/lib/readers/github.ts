@@ -5,6 +5,7 @@ import { ICommit, IDay } from '../models';
 import { ReaderFn } from './index';
 import logger from '../logger';
 
+const parseLinks = require('parse-link-header');
 const pgp = require('pgp-utils');
 
 const avoidRatelimit = async () => {
@@ -39,10 +40,13 @@ export const readGitHub: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
   // until we've got something with a date before the oldestDay.date (-1 day just to be sure)
   let githubEvents: any[] = [];
   let gotDateBeforeOldestDay = false;
-  let i = 0;
+  
+  let i = 1;
+  //https://docs.github.com/en/rest/reference/activity#events
   while (!gotDateBeforeOldestDay) {
+    logger.info(`Fetching page: ${i}`);
     const res = await Axios.get(
-      `https://api.github.com/users/${process.env.GITHUB_USERNAME}/events?page=${i}&per_page=20`,
+      `https://api.github.com/users/${process.env.GITHUB_USERNAME}/events?page=${i}&per_page=100`,
       {
         auth: {
           username: process.env.GITHUB_USERNAME,
@@ -55,6 +59,10 @@ export const readGitHub: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
     gotDateBeforeOldestDay = res.data.some(
       (d: any) => new Date(d.created_at) < addDay(oldestDay.date, -1)
     );
+
+    // Don't go over pagination limit, won't return a last page & last pages' page
+    if(parseLinks(res.headers["link"]).last == undefined) break;
+
     await avoidRatelimit();
     i++; // get next page
   }

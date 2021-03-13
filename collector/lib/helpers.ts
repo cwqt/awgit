@@ -1,4 +1,3 @@
-import { start } from 'repl';
 import { Collection } from './firestore';
 
 /**
@@ -17,7 +16,7 @@ export const getStartAndEndDates = async (collection: Collection): Promise<[Date
   if (!startDate) {
     const today = new Date();
     const yesterday = new Date(today);
-    yesterday.setDate(yesterday.getDate() - 10);
+    yesterday.setDate(yesterday.getDate() - 71);// 10
     startDate = yesterday;
   }
 

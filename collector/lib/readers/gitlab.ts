@@ -56,6 +56,7 @@ export const readGitLab: ReaderFn = async (days: IDay[]): Promise<IDay[]> => {
   let isStillPaging = true;
   let page = 1;
   while (isStillPaging) {
+    logger.info(`Fetching page: ${page}`);
     const res = await Axios.get(
       `https://gitlab.com/api/v4/events?page=${page}&page_size=100&action=pushed&after=${addDay(
         oldestDay.date,

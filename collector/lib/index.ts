@@ -65,6 +65,7 @@ export default PRIVATE;
     await Readers.ActivityWatch(days);
     await Readers.GitHub(days);
     await Readers.GitLab(days);
+
     days.forEach((day) => {
       day.commit_count = day.commits.length;
     });
@@ -83,7 +84,7 @@ export default PRIVATE;
     const envData = env.data();
 
     // Get previous longest day - if it exists
-    let longestDay = (await fs.collection('days').doc(envData.longest_day).get()).data();
+    let longestDay = envData.longest_day ? (await fs.collection('days').doc(envData.longest_day).get()).data() : null;
     let longestDayTime = longestDay
       ? Object.values<number>(longestDay.stats).reduce((a, c) => (a += c), 0)
       : 0;
@@ -98,6 +99,12 @@ export default PRIVATE;
 
       return (acc += currDayTime);
     }, 0);
+
+    console.log({
+      longest_day: longestDay._id,
+      total_days: envData.total_days + days.length,
+      total_hours: envData.total_hours + totalDaysTime,
+    })
 
     //Update the configuration
     await env.ref.update({
