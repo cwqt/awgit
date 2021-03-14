@@ -35,4 +35,5 @@ export interface IPrivateData {
   }; // google.com
   windows: string[]; // somewindow
   repos: { [index: string]: string };
+  orgs: string[]
 }
